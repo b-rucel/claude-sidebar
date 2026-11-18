@@ -1,5 +1,5 @@
 import { atom, read, update } from 'claude-code'
-import type { EngineInterface, Register } from 'claude-code'
+import type { EngineInterface, Register, RenderChildren } from 'claude-code'
 
 import type { Call, Git } from '../types'
 
@@ -70,7 +70,7 @@ export const register: Register = on => {
     const pct = u.context.percent ?? 0
     const level = (n: number) => (n >= 85 ? '#f87171' : n >= 60 ? '#fbbf24' : '#34d399')
 
-    const Panel = (props: { title: string; children?: unknown }) => (
+    const Panel = (props: { title: string; children?: RenderChildren }) => (
       <Box flexDirection="column" borderStyle="round" borderColor="#7c6fb0" paddingX={1}>
         <Text bold color="#c4b5fd">✦ {props.title}</Text>
         {props.children}
@@ -86,7 +86,7 @@ export const register: Register = on => {
         </Box>
       </Box>
     )
-    const Row = (props: { left: unknown; right?: unknown }) => (
+    const Row = (props: { left: RenderChildren; right?: RenderChildren }) => (
       <Box justifyContent="space-between">
         {props.left}
         {props.right}
