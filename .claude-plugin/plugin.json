@@ -1,0 +1,1 @@
+{ "name": "claude-sidebar", "version": "0.1.0", "description": "Live sidebar pane: context, usage, tool activity and git state", "types": "./types/index.d.ts" }

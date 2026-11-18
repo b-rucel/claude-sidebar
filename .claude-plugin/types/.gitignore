@@ -1,0 +1,3 @@
+# The vendored claude-code type definitions in this directory are committed on
+# purpose: tsconfig.json extends ./tsconfig.json and typeRoots points here, so a
+# clone does not typecheck without them.
